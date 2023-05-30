@@ -37,7 +37,7 @@ const Bubble = ({ size }: any) => {
         <>
             {
                 !isLoadingComplete && (
-                    <Flex direction="column" width={"100%"} align="center" position={"absolute"} bg="whiteAlpha.200">
+                    <Flex bg="#FFFBF5" direction="column" width={"100%"} align="center" height={"100vh"} justify="center" position={"absolute"} bg="whiteAlpha.200">
                 
                 <Image data-download="none" src={CookingGif} alt="cooking" width={400} height={400}/>
                 <Text className="box" fontWeight={"semibold"}>{words[0]}...</Text>
