@@ -20,7 +20,7 @@ const CartModal = ({ isOpen, setIsOpen }: CartModalProps) => {
     };
 
     return (
-        <Box>
+        <Box >
         <Button bg="none" onClick={handleOpen}>
             <CartIcon />
         </Button>
