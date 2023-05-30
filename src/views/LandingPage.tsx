@@ -5,6 +5,7 @@ import Hero from './landingpage/Hero'
 import { useSpring, animated } from '@react-spring/web'
 import CategoriesMenu from '@/Layout/CategoriesMenu'
 import ShoppingCart from './CartItems'
+import Footer from '@/Layout/Footer'
 type Props = {}
 
 function LandingPage({}: Props) {
@@ -52,6 +53,7 @@ function LandingPage({}: Props) {
             <CategoriesMenu categories={"Pasta"}/>
 
             </Box>
+            <Footer />
         </animated.div>
     
     )

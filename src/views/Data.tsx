@@ -75,7 +75,7 @@ const Data = (props: Props) => {
         <Stack align="center" spacing={6}>
           {data?.categories?.map((item: any, index: number) => (
             <SwiperSlide  style={{ margin: '0 10px' }} key={index}>
-              <Box bg="#361500" height="100px" display="flex" alignItems="center" justifyContent="center">
+              <Box bg="#361500" height="60px" display="flex" alignItems="center" justifyContent="center">
                 <Text color="white" size="md" fontWeight={"medium"}>
                   {item?.strCategory}
                 </Text>

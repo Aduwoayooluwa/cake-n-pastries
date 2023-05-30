@@ -31,7 +31,7 @@ const Hero = (props: Props) => {
             {/* text */}
             <Stack paddingY={{base: "20px", md:"0"}} width={width} align={"center"} gridGap={10} maxWidth={{base:"100%", md:"full"}}>
                 <Heading className='hero-text' textColor={"#7c3a00"} as={"h4"} display={{base: "none", md:"flex"}}  textAlign={"center"} width={{base:"100%", md:"100%"}}>Satisfy Your Sweet Cravings with our Tempting Selection</Heading>
-                <Heading className='hero-text' textColor={"#7c3a00"} as={"h5"} display={{base: "flex", md:"none"}}  textAlign={"center"} width={{base:"100%", md:"100%"}}>Satisfy Your Sweet Cravings with our Tempting Selection</Heading>
+                <Text className='hero-text' textColor={"#7c3a00"} fontSize={"xl"} fontWeight={"semibold"} display={{base: "flex", md:"none"}}  textAlign={"center"} width={{base:"100%", md:"100%"}}>Satisfy Your Sweet Cravings with our Tempting Selection</Text>
                 <Button className='hero-text' colorScheme={"pink"} bg="#d31245" width={"300px"}>Treat Yourself</Button>
             </Stack>
             

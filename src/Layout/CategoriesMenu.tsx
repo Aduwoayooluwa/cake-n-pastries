@@ -41,18 +41,6 @@ const CategoriesMenu = ({ categories }: any) => {
         autoplay: true,
         loop: true,
         autoplaydisableoninteraction: true,
-        breakpoints: {
-            // For mobile devices
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-                },
-                // For tablets and larger screens
-                768: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-                },
-            },
         };
 
         const swiperOptions2 = {
@@ -63,7 +51,7 @@ const CategoriesMenu = ({ categories }: any) => {
             renderBullet: (index: any, className:any) =>
                 `<span class="${className}" style="background-color: pink"></span>`,
             },
-            slidesPerView: 2,
+            slidesPerView: 3,
             scrollbar: true,
             autoplay: true,
             loop: true,
@@ -91,7 +79,7 @@ const CategoriesMenu = ({ categories }: any) => {
     return (<>
                 <Text
         fontWeight="semibold"
-        fontSize="24px"
+        fontSize={{base: "xl", md:"24px"}}
         textAlign="center"
         textTransform="uppercase"
         color="pink.500"
@@ -107,7 +95,7 @@ const CategoriesMenu = ({ categories }: any) => {
         <Box display={{base: "none", md:"flex"}} marginTop="50px">
         
             <Swiper {...swiperOptions}>
-                <Stack align="center" spacing={6}>
+                <Stack spacing={6}>
                 {data?.meals?.slice(0, 10)?.map((item: any, index: number) => (
                     <SwiperSlide style={{ margin: '0 10px' }} key={index}>
                     <animated.div style={springProps}>
@@ -167,7 +155,7 @@ const CategoriesMenu = ({ categories }: any) => {
                             flex="1"
                         >
                             <Text
-                            fontWeight="semibold"
+                            fontWeight="medium"
                             color={hoveredIndex === index ? 'pink' : 'black'}
                             >
                             {item?.strMeal}
@@ -249,7 +237,7 @@ const CategoriesMenu = ({ categories }: any) => {
                             flex="1"
                         >
                             <Text
-                            fontWeight="semibold"
+                            fontWeight="medium"
                             color={hoveredIndex === index ? 'pink' : 'black'}
                             >
                             {item?.strMeal}
