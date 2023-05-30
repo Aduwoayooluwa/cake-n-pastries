@@ -1,4 +1,5 @@
 import { Box, Flex, Text, Link, Stack, Icon } from '@chakra-ui/react';
+import Image from 'next/image';
 import { RiFacebookFill, RiInstagramFill, RiTwitterFill } from 'react-icons/ri';
 
 const Footer = () => {
@@ -12,11 +13,15 @@ const Footer = () => {
         <Flex direction={{ base: 'column', md: 'row' }} align="center" justify="space-between" px={8}>
             <Stack spacing={4}>
             <Flex align="center" direction="column" gap={3}>
-                <Text fontSize="3xl" fontWeight="medium">
-                CakeNPasteries
-                </Text>
+                    <Box display={{base:"flex", md:"none"}}>
+                        <Image  src={"/logo_light.svg"} alt="logo" width={200} height={300} />
+                        
+                    </Box>
+                    <Box display={{base:"none", md:"flex"}}>
+                    <Image src={"/logo_light.svg"} alt="logo" width={300} height={300} />
+                    </Box>
                 <Text  display={{base:"none"}} fontSize="sm">123 Bakery Street, City, Country</Text>
-                <Text ml={1} display={{md:"none"}} fontWeight={"semibold"} fontSize="lg">
+                <Text ml={1} display={{md:"none"}} fontWeight={"semibold"} mt={6} fontSize="lg">
                 Delicious treats for every occasion
                 </Text>
 

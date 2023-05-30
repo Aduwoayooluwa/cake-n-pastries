@@ -5,6 +5,7 @@ import {Rotate as HamburgerIcon } from "hamburger-react"
 import Search from '@/components/Search.component'
 import CartIcon from '@/models/cartIcon.model'
 import CartModal from '@/views/CartModal'
+import Image from 'next/image'
 
 
 
@@ -18,8 +19,12 @@ const Navigation = (props: Props) => {
         <>
         
             <Flex align="center"  padding={{base: 4, md:10}}  color={"gray.800"} >
-                    <Box>
-                        <Text as="i" fontWeight={"medium"} fontSize="xl">CakeNPasteries</Text>
+                    <Box display={{base:"flex", md:"none"}}>
+                        <Image  src={"/logo_dark.svg"} alt="logo" width={200} height={300} />
+                        
+                    </Box>
+                    <Box display={{base:"none", md:"flex"}}>
+                    <Image src={"/logo_dark.svg"} alt="logo" width={300} height={300} />
                     </Box>
                     <Spacer />
 
