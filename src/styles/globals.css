@@ -1,27 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.hero-text {
+	-webkit-animation: hero-text 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	      animation: hero-text 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+ @-webkit-keyframes hero-text {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes hero-text {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+.bubble {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: blue;
+  position: relative;
+  animation: bubble 1s infinite;
+  }
+  
+  @keyframes bubble {
+      0% {
+      transform: scale(.15, .15);
+      top: 80%;
+      opacity: 0;
+      }
+      50% {
+      transform: scale(1.1, 1.1);
+      opacity: 1;
+      }
+      100% {
+      transform: scale(.33, .33);
+      top: 60%;
+      opacity: 0;
+      }
+  }
