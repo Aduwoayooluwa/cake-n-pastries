@@ -17,7 +17,7 @@ const Search = () => {
         <InputGroup width={"100%"}>
         <InputLeftElement pointerEvents="none">
             <SearchIcon
-            color={isFocused ? "pink.500" : "gray.300"}
+            color={isFocused ? "#d31245" : "gray.300"}
             transition="color 0.3s"
             />
         </InputLeftElement>
@@ -27,7 +27,7 @@ const Search = () => {
             onFocus={handleFocus}
             onBlur={handleBlur}
             width={{base: "100%", md:"500px"}}
-            focusBorderColor={isFocused ? "pink.500" : undefined}
+            focusBorderColor={isFocused ? "#d31245" : undefined}
         />
         </InputGroup>
     );

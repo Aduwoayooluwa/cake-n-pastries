@@ -5,13 +5,14 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { Box, Stack, Heading, Flex, Text, Button, useBreakpointValue } from '@chakra-ui/react';
 import { animated, useSpring } from '@react-spring/web';
 import Image from 'next/image';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 import 'swiper/swiper.min.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import "swiper/css/autoplay";
 import { useAppStore } from '@/lib/store';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const CategoriesMenu = ({ categories }: any) => {
     const url:string = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categories}`
@@ -24,6 +25,10 @@ const CategoriesMenu = ({ categories }: any) => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     const swiperOptions = {
+        speed: 500,
+        mousewheel: {
+            sensitivity:0.5
+        },
         navigation: false,
         pagination: {
         clickable: true,
@@ -50,6 +55,7 @@ const CategoriesMenu = ({ categories }: any) => {
         };
 
         const swiperOptions2 = {
+            speed:500,
             navigation: false,
             pagination: {
             clickable: true,
@@ -60,7 +66,9 @@ const CategoriesMenu = ({ categories }: any) => {
             scrollbar: true,
             autoplay: true,
             loop: true,
-            autoplaydisableoninteraction: true,
+            autoplayDisableOnInteraction:true,
+            smoothness: true,
+            autoplaySpeed: 3000,
             breakpoints: {
                 // For mobile devices
                 640: {
@@ -135,6 +143,7 @@ const CategoriesMenu = ({ categories }: any) => {
                             <Button
                             size="sm"
                             colorScheme="pink"
+                            bg="#d31245"
                             marginTop="10px"
                             opacity={hoveredIndex === index ? 1 : 0}
                             transform={`translateY(${hoveredIndex === index ? '0' : '20px'})`}
@@ -213,6 +222,7 @@ const CategoriesMenu = ({ categories }: any) => {
                             <Button
                             size="sm"
                             colorScheme="pink"
+                            bg="#d31245"
                             marginTop="10px"
                             
                             opacity={hoveredIndex === index ? 1 : 0}

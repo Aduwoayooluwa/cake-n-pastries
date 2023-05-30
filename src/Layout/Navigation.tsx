@@ -37,17 +37,17 @@ const Navigation = (props: Props) => {
                     <Flex gap={"6"} align={"center"} width={""}  display={{base: "none", md: "flex"}}>
                         {/* menu items */}
 
-                        <Text>Food</Text>
+                        <Text fontSize="xl" fontWeight={"semibold"} textColor="#48250f">Food</Text>
 
-                        <Text>Drinks</Text>
+                        <Text fontSize="xl" fontWeight={"semibold"} textColor="#48250f">Drinks</Text>
 
-                        <Text>Pastries</Text>
+                        <Text fontSize="xl" fontWeight={"semibold"} textColor="#48250f">Pastries</Text>
 
-                        <Text>Cakes</Text>
+                        <Text fontSize="xl" fontWeight={"semibold"} textColor="#48250f">Cakes</Text>
 
                         <ButtonGroup gap="2">
-                            <Button colorScheme='pink'>Log in</Button>
-                            <Button colorScheme='pink'>Register</Button>
+                            <Button bg="#d31245" colorScheme='pink'>Log in</Button>
+                            <Button bg="#d31245" colorScheme='pink'>Register</Button>
                         </ButtonGroup>
                         
                     </Flex>
