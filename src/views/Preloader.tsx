@@ -1,15 +1,17 @@
 "use client"
 import React, { useLayoutEffect, useState } from "react";
 import "./styles/preloader.module.css"
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import CookingGif from "@/assets/images/cooking.gif"
 import gsap from 'gsap'
 import BarLoader from "@/components/loaders/bar.loader";
 import LandingPage from "./LandingPage";
+import CartModal from "./CartModal";
 
 const Bubble = ({ size }: any) => {
     const [isLoadingComplete, setIsLoadingComplete] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(false)
     const words = [
         "cooking your desires",
         "it won't be long"
@@ -29,7 +31,7 @@ const Bubble = ({ size }: any) => {
         })
 
         timeline.play()
-    }, [])
+    }, [timeline])
     
 
 
@@ -47,7 +49,22 @@ const Bubble = ({ size }: any) => {
                 )
             }
 
-            { isLoadingComplete && (<LandingPage />)}
+            { isLoadingComplete && (<>
+                <LandingPage />
+                <Stack
+                borderRadius="full"
+                boxShadow="xl"
+                bg="whiteAlpha.600"
+                position="fixed"
+                bottom="0%"
+                right="-10%"
+                py="15px"
+                display={{ md: "none" }}
+                transform="translate(-50%, -50%)"
+                >
+                <CartModal isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
+            </Stack>
+            </>)}
         </>
         
         

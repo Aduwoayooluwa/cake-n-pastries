@@ -1,15 +1,17 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import Hero from './landingpage/Hero'
 
 import { useSpring, animated } from '@react-spring/web'
 import CategoriesMenu from '@/Layout/CategoriesMenu'
-import ShoppingCart from './CartItems'
 import Footer from '@/Layout/Footer'
+import CartIcon from '@/models/cartIcon.model'
+import CartModal from './CartModal'
 type Props = {}
 
 function LandingPage({}: Props) {
     const [isOpen, setIsOpen] = useState(false)
+    
     const [props, set] = useSpring(() => ({
         opacity: 0.6,
         transform: 'translateY(0)',
@@ -33,12 +35,6 @@ function LandingPage({}: Props) {
         window.removeEventListener('scroll', handleScroll);
         };
     }, [set]);
-
-    const cartItems = [
-        { id: "1", name: "Item 1", price: 10, quantity: 2 },
-        { id: "2", name: "Item 2", price: 15, quantity: 1 },
-        { id: "3", name: "Item 3", price: 5, quantity: 4 },
-      ];
     
     return (
         <animated.div style={props}>
@@ -53,6 +49,7 @@ function LandingPage({}: Props) {
             <CategoriesMenu categories={"Pasta"}/>
 
             </Box>
+        
             <Footer />
         </animated.div>
     
