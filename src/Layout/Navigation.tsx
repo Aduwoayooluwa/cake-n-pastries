@@ -17,9 +17,9 @@ const Navigation = (props: Props) => {
     return (
         <>
         
-            <Flex align="center"  p={4}  color={"gray.800"} >
+            <Flex align="center"  padding={{base: 4, md:10}}  color={"gray.800"} >
                     <Box>
-                        <Heading size="md">CakeNPasteries</Heading>
+                        <Text as="i" fontWeight={"medium"} fontSize="xl">CakeNPasteries</Text>
                     </Box>
                     <Spacer />
 

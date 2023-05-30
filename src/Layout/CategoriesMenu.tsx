@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 import "swiper/css/autoplay";
 import { useAppStore } from '@/lib/store';
 
+
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const CategoriesMenu = ({ categories }: any) => {
